@@ -8,7 +8,7 @@ Fuente: *Trabajo_Autonomo_Flutter_API.docx*. Lo que el documento prohíbe o exig
 - 📌 Subir claves, contraseñas o `env/dev.json` al repositorio.
 - 📌 Que un ViewModel haga solicitudes remotas directamente (usa el repositorio).
 - 📌 Que una vista/widget llame a `ApiService` o al SDK de Supabase.
-- Importar `supabase_flutter` fuera de `core/network` y de `features/*/data`.
+- Importar `supabase_flutter` fuera de `core/network`, `features/*/data` y dos excepciones de infraestructura ya existentes: `core/error/app_exception.dart` (tipos `AuthException`/`PostgrestException`) y `core/di/app_providers.dart` (`Supabase.instance.client`). No se agregan más.
 - Crear dependencias dentro del ViewModel (`Repo()` dentro del VM). Se reciben por constructor.
 - Agregar paquetes al `pubspec.yaml` sin acordarlo en el equipo (en especial: otros gestores de estado, ORMs, Hive, Isar, sqflite, Dio).
 - Hardcodear colores, fuentes o paddings: usar `Theme.of(context)`, `Brand` y `AppSpacing`.

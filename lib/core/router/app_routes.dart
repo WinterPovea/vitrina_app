@@ -15,6 +15,13 @@ class AppRoutes {
   /// /specialists/:id
   static String specialistDetail(String id) => '/specialists/$id';
 
+  /// Query param para forzar recarga de "Mis turnos" tras reservar o cancelar.
+  static const refreshParam = 'refresh';
+
+  /// `/appointments?refresh=<marca de tiempo>`
+  static String appointmentsRefreshed() =>
+    '$appointments?$refreshParam=${DateTime.now().millisecondsSinceEpoch}';
+
   /// /specialists/:id/book?serviceId=...
   static String book(String specialistId, {String? serviceId}) =>
       '/specialists/$specialistId/book${serviceId == null ? '' : '?serviceId=$serviceId'}';
