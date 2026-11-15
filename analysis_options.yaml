@@ -1,0 +1,20 @@
+include: package:flutter_lints/flutter.yaml
+
+analyzer:
+  errors:
+    # Un ViewModel o una vista jamás deben importar el SDK remoto: se revisa a mano en PR,
+    # pero estos avisos suben a error para cuidar la calidad básica.
+    unused_import: error
+    unused_local_variable: warning
+  exclude:
+    - build/**
+    - android/**
+linter:
+  rules:
+    - prefer_const_constructors
+    - prefer_const_declarations
+    - avoid_print
+    - always_declare_return_types
+    - prefer_single_quotes
+    - unawaited_futures
+    - use_build_context_synchronously

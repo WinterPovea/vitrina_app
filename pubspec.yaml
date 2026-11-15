@@ -1,0 +1,38 @@
+name: vitrina_app
+description: Plantilla Flutter de vitrina de servicios con turnos para organizaciones (multi-organización).
+publish_to: 'none'
+version: 0.1.0+1
+
+environment:
+  sdk: ^3.5.0
+  flutter: '>=3.27.0'
+
+# Solo lo que exige el trabajo autónomo + lo mínimo para funcionar.
+# NO agregar paquetes sin acordarlo en el equipo (ver docs/CONVENTIONS.md).
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # Navegación (exigido): rutas, parámetros y rutas protegidas
+  go_router: ^14.6.2
+  # Estado (exigido): Provider + ChangeNotifier
+  provider: ^6.1.2
+  # Servicio remoto: SDK oficial de Supabase (Auth + Postgres + RLS)
+  supabase_flutter: ^2.8.0
+  # Token/sesión seguros (exigido; NO usar shared_preferences para tokens)
+  flutter_secure_storage: ^9.2.2
+  # Se usa solo para detectar ClientException de red (ya es dependencia transitiva)
+  http: ^1.2.2
+  # WhatsApp / llamadas
+  url_launcher: ^6.3.1
+  # Tipografías del diseño (Bodoni Moda + Plus Jakarta Sans)
+  google_fonts: ^6.2.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+  mocktail: ^1.0.4
+
+flutter:
+  uses-material-design: true
